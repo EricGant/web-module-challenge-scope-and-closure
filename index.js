@@ -28,11 +28,11 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  counter1 has a closure, the child function counter() is reaching into the parent function counterMaker(). the variable in counter2 is defined outside of the function which will allow count to continue to grow by +1 each time.
   2. Which of the two uses a closure? How can you tell?
-  
+  counter1 has a closure, you can tell by the child function counter() pulling the count = 0 from inside the parent function.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?  counter1 is preferable if you need reset your count to 0 each time you invoke the function. counter2 is preferable if you want to continue to add the the count by invoking the function.
 */
 
 // counter1 code
