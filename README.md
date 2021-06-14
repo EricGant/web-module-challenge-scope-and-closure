@@ -43,6 +43,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  a closure is when a function looks outside of its function or scope to pull a variable thats been defined somewhere else. you can pass variables down but you cant take variables out of the closure.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,9 +64,9 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+a. Where is closure used in this code? How can you tell?  its used in the console log ${name}, you can tell because its pulling it from the personalDice function
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? the Name remains the same, but the number will change
+c. What is the lexical scope of `newRoll`? its scope is the function(){ inside of personalDice
 
 
 ### Task 3 - Stretch Goals
