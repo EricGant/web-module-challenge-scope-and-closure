@@ -140,12 +140,21 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 10 - Home 10"
 ]  
   */
-
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(iS, inn, n) {
+  let newA = [];
+  for (let i = 0; i < n; i++ ){
+  newA.push(iS());
+  }
+  let totalHome = newA.reduce(function(prev, cur){
+   return prev+cur.Home; }, 0);
+  let totalAway = newA.reduce(function(prev, cur){
+   return prev+cur.Away;  }, 0);
+  if(totalHome === totalAway){
+   newA.push(`This game will require extra innings: Home: ${totalHome} - Away: ${totalAway}`)
+  } else newA.push(`Final Score: Home ${totalHome} - Away ${totalAway}`)
+ 
+  return newA
 }
-
-
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
