@@ -35,7 +35,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
   counter1 has a closure, you can tell by the child function counter() pulling the count = 0 from inside the parent function.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-  
+
 
   counter2 be better?  counter1 is preferable if you need reset your count to 0 each time you invoke the function. counter2 is preferable if you want to continue to add the the count by invoking the function.
 */
@@ -98,12 +98,13 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-    function getInningScore(inning) {
+    function getInningScore(cb) {
       let innScore = {};
-      innScore['Home'] = inning();
-      innScore['Away'] = inning();
+      innScore['Home'] = cb();
+      innScore['Away'] = cb();
       return innScore
     }
+    getInningScore(inning)
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
@@ -147,8 +148,10 @@ Use the scoreboard function below to do the following:
   */
 function scoreboard(iS, inn, n) {
   let newA = [];
+  let newinn = 1
   for (let i = 0; i < n; i++ ){
   newA.push(iS());
+  newA[i]['Inning'] = newinn++
   }
   let totalHome = newA.reduce(function(prev, cur){
    return prev+cur.Home; }, 0);
