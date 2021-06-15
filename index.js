@@ -86,11 +86,17 @@ Use the finalScore function below to do the following:
 } 
 */ 
 
-function finalScore(f, i){
-  let newobj = {};
-   newobj['Home'] = f() * i;
-   newobj['Away'] = f() * i;
-  return newobj 
+function finalScore(inningCB,inns){
+  let finalScore = {}
+  let homeScore = 0
+  let awayScore = 0
+  for(let i = 0; i<inns; i++){
+homeScore = homeScore + inningCB()
+awayScore = awayScore + inningCB()
+  finalScore['Home']= homeScore
+  finalScore['Away']= awayScore
+}
+  return finalScore
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
